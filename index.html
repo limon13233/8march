@@ -7,7 +7,7 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   </head>
   <body style="margin:0; overflow:hidden;">
-     <a-scene embedded arjs =' patternRatio: 0.9; detectionMode: mono_inverted'>
+     <a-scene embedded arjs =' patternRatio: 0.9; detectionMode: mono_and_matrix'>
       <!-- Для каждого сердечка создаём свой маркер и привязываем фото -->
       <a-marker preset="hiro">
         <a-image src="img/2.jpg" position="0 0 0" scale="1 1 1" rotation="-90 0 0"></a-image>
@@ -29,6 +29,7 @@
   </body>
 
 </html>
+
 
 
 
