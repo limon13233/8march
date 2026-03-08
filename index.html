@@ -8,7 +8,7 @@
   </head>
   <body style="margin:0; overflow:hidden;">
     
-     <a-scene embedded arjs =' patternRatio: 0.9;trackingMethod: best; sourceType: webcam;debugUIEnabled: false;'>
+     <a-scene embedded arjs ='sourceType: webcam; debugUIEnabled: true; detectionMode: mono; patternRatio: 0.2; matrixCodeType: 3x3;'>
       <!-- Для каждого сердечка создаём свой маркер и привязываем фото -->
       <a-marker preset="hiro">
         <a-image src="img/2.jpg" position="0 0 0" scale="1 1 1" rotation="-90 0 0"></a-image>
@@ -30,6 +30,7 @@
   </body>
 
 </html>
+
 
 
 
