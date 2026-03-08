@@ -2,44 +2,32 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Открытка на 8 марта</title>
+    <title>Открытка на 8 марта (MindAR)</title>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
   </head>
   <body style="margin:0; overflow:hidden;">
-    
-     <a-scene embedded arjs ='sourceType: webcam; debugUIEnabled: false; detectionMode: mono; patternRatio: 0.9; matrixCodeType: 3x3;'>
-      <!-- Для каждого сердечка создаём свой маркер и привязываем фото -->
-      <a-marker preset="hiro">
-        <a-image src="img/2.jpg" position="0 0 0" scale="1 1 1" rotation="-90 0 0"></a-image>
-      </a-marker>
-      <!-- Сердечко 1 -->
-      <a-marker type="pattern" url="pattern-first.patt">
+    <a-scene mindar-image="imageTargetSrc: ./targets.mind; autoStart: true; uiLoading: no; uiError: no; uiScanning: no;" embedded vr-mode-ui="enabled: false">
+      <!-- Камера: обязательно отключаем look-controls, чтобы не вращать вид -->
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+      <!-- Сердечко 1 (targetIndex 0) -->
+      <a-entity mindar-image-target="targetIndex: 0">
         <a-image src="img/IMG_0946.jpeg" position="0 0 0" scale="1 1 1" rotation="-90 0 0"></a-image>
-      </a-marker>
+      </a-entity>
+
+      <!-- Сердечко 2 (targetIndex 1) – раскомментируйте и подставьте свою фотографию -->
+      <a-entity mindar-image-target="targetIndex: 1">
+        <a-image src="img/2.jpg" position="0 0 0" scale="1 1 1" rotation="-90 0 0"></a-image>
+      </a-entity>
+
+      <!-- Сердечко 3 (targetIndex 2) -->
+      <a-entity mindar-image-target="targetIndex: 2">
+        <a-image src="img/photo3.jpg" position="0 0 0" scale="1 1 1" rotation="-90 0 0"></a-image>
+      </a-entity>
+
+      <!-- ... аналогично для всех 7 сердечек (targetIndex до 6) ... -->
       
-      <!-- Сердечко 2
-      <a-marker type="pattern" url="heart2.patt">
-        <a-image src="photo2.jpg" position="0 0 0" scale="1 1 1" rotation="-90 0 0"></a-image>
-      </a-marker> -->
-      
-      <!-- ... аналогично для всех 7 сердечек ... -->
-      
-      <a-entity camera></a-entity>
     </a-scene>
   </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
